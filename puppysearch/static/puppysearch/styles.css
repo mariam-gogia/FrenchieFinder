@@ -1,0 +1,501 @@
+.div_nav_bar {
+    margin-left: 1%;
+}
+
+.div_2_nav_bar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main {
+    width: 80%;
+    padding-left: 180px;
+    margin: 30px auto;
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.color_heading {
+    text-align: center;
+    margin-top: 8px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+.hr_search {
+    margin-left: 15px;
+    margin-right: 15px;
+    color: #46035e;
+}
+
+.card-deck {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 270px));
+    grid-gap: .1em;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 30px;
+}
+
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 768px) {
+    .card-columns {
+        column-count: 4;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 5;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-columns {
+        column-count: 6;
+    }
+}
+
+
+/* Classes for colors/html */
+
+.img_colors {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+}
+
+.color_name {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background: #f5d5e1;
+}
+
+.color_link {
+    color: black;
+}
+
+.color_link:hover {
+    color: black;
+}
+
+.color_link_white {
+    color: white;
+}
+
+.color_link_white:hover {
+    color: white;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 300px;
+    padding: 2px;
+    /* height: 200px; */
+}
+
+.owner_label {
+    font-size: 14px !important;
+    text-decoration: underline;
+    color: brown;
+}
+
+.timestamp_label {
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 12px;
+}
+
+.review_content {
+    margin-left: 12px;
+    overflow: auto;
+    height: 50px;
+}
+
+.content_p {
+    line-height: 18px;
+    overflow-wrap: auto;
+}
+
+.card {
+    width: 50x;
+}
+
+.card_deck_outside {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 1px;
+    background-color: #f0f2f1;
+}
+
+.card-columns {
+    padding-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.price_lbl {
+    padding: 0;
+    margin: 0;
+}
+
+.listing_info {
+    line-height: 1px;
+}
+
+.listing_info_1 {
+    line-height: 12px;
+    font-size: 12px;
+}
+
+.breeders_list {
+    padding-left: 5px;
+}
+
+.breeders_list li {
+    height: 46px;
+    background: url('/static/media/list_logo.png') no-repeat 7px 7px transparent;
+    list-style-type: none;
+    margin: 0;
+    vertical-align: middle;
+    padding: 20px 0px 0px 52px;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.search {
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.locations_list {
+    padding-left: 5px;
+}
+
+.locations_list li {
+    height: 50px;
+    background: url('/static/media/location.png') no-repeat 20px 7px transparent;
+    list-style-type: none;
+    margin: 0;
+    vertical-align: middle;
+    padding: 14px 0px 0px 42px;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.user_card_container {
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+#next_btn {
+    float: left;
+    margin: 1px;
+}
+
+#prev_btn {
+    float: left;
+    margin: 1px;
+}
+
+.favorite_btn {
+    width: 85px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 63%;
+    padding-top: 0%;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background-color: #ffff4d;
+    cursor: pointer;
+    color: black;
+    border: 2px solid black;
+    border-radius: 14px;
+    transition-duration: 0.4s;
+}
+
+.favorite_btn:hover {
+    background-color: white;
+    color: black;
+}
+
+#unfavorite_btn {
+    background-color: #ff9999;
+}
+
+#unfavorite_btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.user_card_left {
+    float: left;
+    width: 300px;
+}
+
+.user_card_right {
+    float: left;
+    clear: left;
+    width: 100%;
+}
+
+.user_card_center {
+    background-color: #c3dade;
+    padding-right: 5px;
+    margin-top: 20px;
+    width: 550px;
+    min-height: 528px;
+    float: left;
+    padding-left: 5px;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+}
+
+#member_since_label {
+    font-size: 12px;
+    font-style: italic;
+    color: black;
+}
+
+#stats_card {
+    height: 288px;
+}
+
+.user_label {
+    padding-left: 5px;
+    font-family: monospace;
+    font-size: 18px;
+}
+
+.user_info {
+    line-height: 10px;
+}
+
+.info_label {
+    font-weight: bold;
+}
+
+.container_left {
+    min-width: 20%;
+    float: left;
+    padding-left: 15px;
+}
+
+.container_right {
+    float: right;
+    width: 75%;
+    border-left: groove;
+    border-color: lightgray;
+    border-width: 1px;
+}
+
+.reviews_inner_div {
+    border: 1px solid grey;
+    margin-right: 3px;
+    height: 108px;
+    margin-bottom: 1px;
+    background-color: white;
+}
+
+#new_review {
+    margin-bottom: 5px;
+}
+
+#new_review .btn {
+    margin-top: 5px;
+}
+
+.flex-container {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+}
+
+.flex-child {
+    padding: 1%;
+    flex: 1;
+    background: #8aa0a8;
+    border: 2px solid black;
+}
+
+.flex-child:first-child {
+    padding: 1%;
+    background: #8aa0a8;
+    margin-right: 20px;
+}
+
+#post_form_div {
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+    margin: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+    height: 170px;
+}
+
+.post_content {
+    width: 100%;
+    height: 70px;
+}
+
+.form_label {
+    font-weight: bolder;
+}
+
+.post_div {
+    display: block;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+    height: 170px;
+}
+
+.owner_label {
+    padding-left: 12px;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.register_form {
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-right: 35%;
+    margin-bottom: 20px;
+}
+
+.form_labels {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 14px;
+}
+
+.post_p {
+    padding-left: 12px;
+}
+
+#actions_dropdown {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 64%;
+}
+
+.timestamp_label {
+    padding-left: 12px;
+    font-weight: 12px;
+    color: grey;
+}
+
+.post_textarea {
+    visibility: hidden;
+}
+
+.form_div {
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-left: 2%;
+    margin-bottom: 10%;
+    max-width: 380px;
+    line-height: 12px;
+    border-radius: 8px;
+    background-color: #e6fff7;
+    position: relative;
+    border: 2px solid black;
+}
+
+.outer_form_div {
+    position: absolute;
+    background-image: url('/static/media/bulldogs.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin-top: 0% !important;
+    background-size: cover;
+    width: 100%;
+    z-index: 0;
+    height: 550px;
+    /* width: 2000px; */
+}
+
+.save_btn_link {
+    padding-left: 2px;
+    background: none!important;
+    border: none;
+    font-family: arial, sans-serif;
+    color: #4285F4;
+    cursor: pointer;
+}
+
+.save_btn_link:hover {
+    text-decoration: underline;
+}
+
+.like_btn {
+    padding-left: 2px;
+    background: none!important;
+    border: none;
+    font-family: arial, sans-serif;
+    color: #4285F4;
+    cursor: pointer;
+}
+
+.like_btn {
+    text-decoration: underline;
+}
+
+.pagination {
+    margin: 15px;
+}
+
+.like_label {
+    padding-left: 12px;
+}
+
+.follow_div {
+    padding-top: 15px;
+    padding-left: 18px;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.follow_btn {
+    margin-left: 18px;
+}
+
+.error_div {
+    margin-left: 15px;
+    margin-top: 8px;
+}

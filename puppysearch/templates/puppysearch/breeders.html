@@ -1,0 +1,77 @@
+{% extends "puppysearch/layout.html" %} {%load static%}
+<html lang="en">
+
+<head>
+    <link href="{% static 'puppysearch/styles.css' %}" rel="stylesheet">
+</head>
+
+{% block body %}
+<h3 class="color_heading">Meet Our Breeders </h3>
+<hr>
+<div class="container_breeders">
+    <!-- Display the list of breeders -->
+    <div class="container_left">
+        <ul class="breeders_list">
+            {%for breeder in breeders%}
+            <li class="color_link_user" data-breeder="{{breeder.id}}"> <a class="color_link" href="#"> {{breeder.company_name}} </li></a> 
+            {%endfor%}
+        </ul>
+    </div>
+
+    <div class="container_right" id="container_right_id">
+        <!-- Card displaying breeder's contact information-->
+        <div class="user_card_container">
+            <div class="user_card_left">
+                <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">
+                        <img class="user_logo" src="{% static 'media/user_logo.png' %}" alt="user_logo">
+                        <label id="company_label" class="user_label"></label>
+                    </div>
+                    <div class="card-body">
+                        <h5 id="full_name"class="card-title"></h5>
+                        <hr>
+                        <div class="user_info">
+                            <label class="info_label">Email: </label> <label id="email_label"> </label> <br>
+                            <label class="info_label">Phone: </label> <label id="phone_label"> </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card displaying breeder's stats -->
+            <div class="user_card_right">
+                <div id="stats_card" class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                    <div class="card-header">
+                        <h4> Statistics </h4>
+                    </div>
+                    <div class="card-body">
+                        <label> Member since:</label> <label id="member_since_label">  </label> <br>
+                         <a id="active_listings_link" class="color_link_white" href = ""> Active Listings:  <label id="count_label"> </label> <a/>  <br>                    
+                        <label> Sold puppies:</label> <label id="sold_count_label">  </label> <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Division for reviews-->
+        <div class="user_card_center">
+            <h5>Reviews:</h5>
+                <div id="new_review" >
+                {%if user.is_authenticated%}
+                    <form data-user="{{request.user.id}}" id="review-form" method="post">
+                    {% csrf_token %}
+                        <textarea class="form-control" id="review-body" placeholder="Your review goes here.."></textarea>
+                        <input id="submit_review" type="button" class="btn btn-light btn-sm" value="review"/>
+                    </form>
+                </div>
+                <hr>
+                {%endif%}
+                <div data-breeder="{{breeder.id}}" id="reviews_view">
+                </div> 
+                <div class="pagination_buttons">
+                <button id="prev_btn" >Prev</button>
+                <button id="next_btn" >Next</button>
+            </div>   
+        </div>
+    </div>
+    <script src=" {% static 'puppysearch/script.js' %} "></script>
+</html>
+{% endblock %}

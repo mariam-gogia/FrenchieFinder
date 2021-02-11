@@ -1,0 +1,21 @@
+{% extends "puppysearch/layout.html" %} {%load static%}
+<html lang="en">
+<head>
+    <link href="{% static 'puppysearch/styles.css' %}" rel="stylesheet">
+</head>
+{% block body %} 
+<h3 class="color_heading">Pick a frenchie by its color </h3>
+<div class="card_deck_outside"> 
+    <div class="card-columns">
+    {% for color in colors %}
+        <div class="card border-info mb-3">
+            <div class="card-header"> <h4 class="color_name"> <a class="color_link" href = "{% url 'show_color_listings' color.id %}">{{color.name}}</h4>
+                <img class="img_colors" src="{{ color.image_url}}" alt="Dog Pic">
+            </div>
+        </div>
+    {% endfor %}
+    </div> 
+</div> 
+<script src=" {% static 'puppysearch/script.js' %} "></script>
+</html>
+{% endblock %}

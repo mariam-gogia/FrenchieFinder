@@ -1,0 +1,80 @@
+{% extends "puppysearch/layout.html" %} {%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="{% static 'puppysearch/styles.css' %}" rel="stylesheet">
+</head>
+
+{% block body %}
+<!-- Search -->
+<div class="main">
+    <!-- Search form -->
+    <form action="{% url 'search' %}" class="form-inline">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search color, location, listing id, breeder, name" aria-label="Search" name="q">
+    </form>
+</div>
+<hr class="hr_search"> 
+{%if page|length == 0%}
+<h3 class="color_heading">Oh no! No puppies found</h3>
+{%else%}
+
+<!-- Each listing -->
+<div class="card_deck_outside">
+    <div class="card-deck">
+        {%for listing in page%}
+        <div class="card border-info mb-3">
+            {% if user.is_authenticated %} {%if listing.breeder != request.user %}
+            <button data-listing="{{listing.id}}" class="favorite_btn" {%if request.user in listing.watchers.all %} id="unfavorite_btn">- Unfavorite
+            {%else%}>+ Favorite{%endif%}
+            </button> {%else%}
+            <div id="actions_dropdown" class="dropdown">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Actions
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{% url 'delete_listing' listing.id %}">Delete Listing</a>
+                    <a class="dropdown-item" href="{% url 'sold_listing' listing.id %}">Mark as Sold</a>
+                </div>
+            </div>
+            {%endif%} {%endif%}
+            <div class="card-header">
+                <h4 class="puppy_name">{{listing.title}}</h4>
+            </div>
+            <img class="card-img-top" src="{{ listing.image_url}}" alt="Dog Pic">
+            <div class="card-body">
+                <div class="listing_info">
+                    <label> ID: {{listing.id}} </label>
+                    <h5 class="card-title"> <a class="color_link" href = "{% url 'show_color_listings' listing.color.id %}"> {{listing.color.name}}</a> </h5>
+                    <label class="price_lbl">Price: ${{listing.price}}</label>
+                    <hr>
+                    <p class="content_p">{{listing.description}}</p>
+                    <hr>
+                </div>
+                <div class="listing_info_1">
+                    <label> Breeder: <a class="color_link" href = "{% url 'show_breeder_listings' listing.breeder.id %}"> {{listing.breeder.company_name}}</a> </label><br>
+                    <label> Location: <a class="color_link" href = "{% url 'show_location_listings' listing.location.id %}"> {{listing.location.city}}, {{listing.location.state}}</a> </label><br>
+                </div>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"> Created: {{listing.timestamp}}</small>
+            </div>
+        </div>
+        {% endfor %} {%endif%}
+    </div>
+    <hr>
+    <!-- Pagination -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {%if page.has_previous%}
+            <li class="page-item"><a class="page-link" href="?page={{page.previous_page_number}}">Previous</a></li>
+            {%endif%} {% if page.has_next%}
+            <li class="page-item"><a class="page-link" href="?page={{page.next_page_number}}">Next</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+    <script src="{% static 'puppysearch/script.js' %} "></script>
+</html>
+{% endblock %}

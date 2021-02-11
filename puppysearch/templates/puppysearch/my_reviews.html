@@ -1,0 +1,32 @@
+{% extends "puppysearch/layout.html" %} {%load static%}
+<html lang="en">
+<head>
+    <link href="{% static 'puppysearch/styles.css' %}" rel="stylesheet">
+</head>
+{% block body %} 
+{%if user.is_breeder%}
+<div class="flex-container">
+  <div class="flex-child">
+    <label>Recieved Reviews: </label>
+        {% for review in recieved_reviews %}   
+        <div class="reviews_inner_div"> 
+            <label class="owner_label"> From: {{review.reviewer.email}} </label>
+            <label class="timestamp_label"> {{review.timestamp}} </label>
+            <p class="review_content"> {{review.content}} </p>
+        </div>
+        {%endfor%}
+  </div>
+  {%endif%}
+  <div class="flex-child">
+    <label>Given Reviews:</label>
+        {% for review in given_reviews %}   
+        <div class="reviews_inner_div"> 
+            <label class="owner_label"> To: {{review.reviewed.email}} </label>
+            <label class="timestamp_label"> {{review.timestamp}} </label>
+            <p class="review_content"> {{review.content}} </p>
+        </div>
+        {%endfor%}
+  </div>
+</div>
+</html>
+{% endblock %}
